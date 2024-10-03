@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teste de Captura de Tela</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    
+    #captureModal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+    
+    .modal-content {
+      position: relative;
+      margin: auto;
+      padding: 20px;
+      width: 80%;
+      max-width: 600px;
+      background: white;
+      border-radius: 5px;
+    }
+
+    #previewImage {
+      margin-top: 20px;
+      width: 100%;
+      height: auto;
+      display: none;
+    }
+
+    button {
+      padding: 10px 15px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:disabled {
+      background-color: #AAA;
+    }
+
+    #anexos {
+      margin-top: 20px;
+    }
+
+    #anexos img {
+      max-width: 200px;
+      display: block;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Captura de Tela</h1>
+  <button id="openModalBtn">Tirar Print</button>
+
+  <!-- Área de anexos para simular o envio -->
+  <div id="anexos">
+    <h3>Imagens Anexadas:</h3>
+  </div>
+
+  <!-- Botão de envio para o servidor -->
+  <button id="finalSendBtn" disabled>Enviar para o Servidor</button>
+
+  <div id="captureModal">
+    <div class="modal-content">
+      <h2>Capturar a Tela</h2>
+      <p>Ao capturar a tela, você será redirecionado para a aba desejada, volte nesta aba para finalizar o envio.</p>
+      <button id="startCaptureBtn">Capturar Tela</button>
+      <button id="sendImageBtn" disabled>Anexar Imagem</button>
+      <button id="closeModalBtn">Fechar</button>
+
+      <img id="previewImage" alt="Preview da Captura" />
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
